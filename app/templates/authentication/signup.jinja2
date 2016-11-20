@@ -1,0 +1,37 @@
+{% extends 'base.jinja2' %}
+
+{% block title %}Sign Up{% endblock title %}
+
+{% block content %}
+
+    <h1>Sign Up</h1>
+    <br><br>
+
+    <form action="" method="post">
+        <label>Username<input type="text" name="username" value="{{ form.username }}" /></label>
+        {% if 'username' in form.errors %}
+            <span class="error">{{ form['errors']['username'] }}</span>
+        {% endif %}
+        <br /><br />
+
+        <label>Password<input type="password" name="password" /></label>
+        {% if 'password' in form.errors %}
+            <span class="error">{{ form['errors']['password'] }}</span>
+        {% endif %}
+        <br /><br />
+
+        <label>Password (confirm)<input type="password" name="password_confirm" /></label>
+        {% if 'password_confirm' in form.errors %}
+            <span class="error">{{ form['errors']['password_confirm'] }}</span>
+        {% endif %}
+        <br /><br />
+
+        <label>Email (optional)<input type="text" name="email" value="{{ form.email }}" /></label>
+        {% if 'email' in form.errors %}
+            <span class="error">{{ form['errors']['email'] }}</span>
+        {% endif %}
+        <br /><br />
+
+        <input type="submit" name="Sign Up" />
+    </form>
+{% endblock content %}

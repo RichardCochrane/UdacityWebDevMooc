@@ -1,0 +1,31 @@
+{% extends 'base.jinja2' %}
+
+{% block title %}{% if post %}{{ post.title }}{% else %}New Post{% endif %}{% endblock title %}
+
+{% block content %}
+
+    <h1>Create a new post</h1>
+
+    <form action="" method="POST">
+        <label>
+            Subject<br />
+            <input type="text" name="subject" value="{{ form.subject }}" />
+        </label>
+        {% if 'subject' in form.errors %}
+            <span class="error">{{ form['errors']['subject'] }}</span>
+        {% endif %}
+        <br /><br />
+
+        <label>
+            Content<br />
+            <textarea name="content">{{ form.content }}</textarea>
+        </label>
+
+        {% if 'content' in form.errors %}
+            <span class="error">{{ form['errors']['content'] }}</span>
+        {% endif %}
+
+        <br /><br />
+        <input type="submit" name="Save" />
+    </form>
+{% endblock content %}

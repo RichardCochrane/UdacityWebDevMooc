@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock title %}</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            {% if user %}
+                Logged in as: {{ user.username }} / <a href="/logout">Log Out</a>
+            {% else %}
+                <a href="/login">Log In</a> / <a href="/signup">Sign Up</a>
+            {% endif %}
+
+            {% block content %}{% endblock content %}
+        </div>
+    </body>
+</html>

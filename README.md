@@ -80,3 +80,8 @@ See [LICENSE](LICENSE)
 
 ## Author
 Logan Henriquez and Johan Euphrosine
+
+## Google App Engine and the Virtual Environment
+
+See this [http://ze.phyr.us/appengine-virtualenv/ document] for help in getting the two to play
+nicely.
